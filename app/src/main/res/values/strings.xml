@@ -1,3 +1,12 @@
 <resources>
 	<string name="app_name">Lab14</string>
+	<string name="chooseCityButton">Выберите город</string>
+	<string name="openMapButton">Показать на карте</string>
+	<string name="city">Город:</string>
+	<string name="federalDistrict">Федеральный округ:</string>
+	<string name="region">Регион:</string>
+	<string name="postCode">Почтовый индекс:</string>
+	<string name="timeZone">Часовой пояс:</string>
+	<string name="population">Население:</string>
+	<string name="founded">Основан в:</string>
 </resources>

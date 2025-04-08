@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".ChosenCity">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			xmlns:tools="http://schemas.android.com/tools"
+			xmlns:app="http://schemas.android.com/apk/res-auto"
+			android:id="@+id/main"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			tools:context=".MainActivity">
+
+		<Button
+				android:text="@string/openMapButton"
+				android:layout_width="@dimen/buttonWidth"
+				android:layout_height="wrap_content"
+				android:id="@+id/openMapButton"
+				android:layout_marginTop="@dimen/mainActivityMargin"
+				app:layout_constraintStart_toStartOf="@id/tvFoundedLabel"
+				app:layout_constraintTop_toBottomOf="@id/tvFoundedLabel"/>
+
+		<TextView
+				android:text="@string/city"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/tvCityLabel"
+				android:layout_marginTop="@dimen/mainActivityMargin"
+				app:layout_constraintTop_toTopOf="parent"
+				android:layout_marginBottom="@dimen/mainActivityMargin"
+				android:layout_marginStart="@dimen/startMargin"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintBottom_toBottomOf="@id/openMapButton"/>
+
+		<TextView
+				android:text="@string/federalDistrict"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/tvFederalDistrictLabel"
+				android:layout_marginTop="@dimen/mainActivityMargin"
+				app:layout_constraintTop_toBottomOf="@+id/tvCityLabel"
+				android:layout_marginBottom="@dimen/mainActivityMargin"
+				app:layout_constraintStart_toStartOf="@+id/tvCityLabel"/>
+
+		<TextView
+				android:text="@string/region"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/tvRegionLabel"
+				android:layout_marginTop="@dimen/mainActivityMargin"
+				app:layout_constraintTop_toBottomOf="@+id/tvFederalDistrictLabel"
+				android:layout_marginBottom="@dimen/mainActivityMargin"
+				app:layout_constraintStart_toStartOf="@+id/tvCityLabel"/>
+
+		<TextView
+				android:text="@string/postCode"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/tvPostCodeLabel"
+				android:layout_marginTop="@dimen/mainActivityMargin"
+				app:layout_constraintTop_toBottomOf="@+id/tvRegionLabel"
+				android:layout_marginBottom="@dimen/mainActivityMargin"
+				app:layout_constraintStart_toStartOf="@+id/tvCityLabel"/>
+
+		<TextView
+				android:text="@string/timeZone"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/tvTimeZoneLabel"
+				android:layout_marginTop="@dimen/mainActivityMargin"
+				app:layout_constraintTop_toBottomOf="@+id/tvPostCodeLabel"
+				android:layout_marginBottom="@dimen/mainActivityMargin"
+				app:layout_constraintStart_toStartOf="@+id/tvCityLabel"/>
+
+		<TextView
+				android:text="@string/population"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/tvPopulationLabel"
+				android:layout_marginTop="@dimen/mainActivityMargin"
+				app:layout_constraintTop_toBottomOf="@+id/tvTimeZoneLabel"
+				app:layout_constraintStart_toStartOf="@+id/tvCityLabel"/>
+
+		<TextView
+				android:text="@string/founded"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/tvFoundedLabel"
+				android:layout_marginTop="@dimen/mainActivityMargin"
+				app:layout_constraintTop_toBottomOf="@+id/tvPopulationLabel"
+				android:layout_marginBottom="@dimen/mainActivityMargin"
+				app:layout_constraintStart_toStartOf="@+id/tvCityLabel"/>
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

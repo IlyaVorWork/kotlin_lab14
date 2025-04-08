@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<dimen name="cityName">20sp</dimen>
+	<dimen name="buttonWidth">275sp</dimen>
+	<dimen name="cityListItemMargin">15dp</dimen>
+	<dimen name="mainActivityMargin">10dp</dimen>
+	<dimen name="startMargin">70dp</dimen>
+</resources>
