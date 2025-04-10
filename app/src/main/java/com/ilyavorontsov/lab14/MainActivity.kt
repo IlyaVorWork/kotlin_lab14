@@ -1,6 +1,8 @@
 package com.ilyavorontsov.lab14
 
+import android.content.res.Configuration
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -47,7 +49,7 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        if (savedInstanceState == null) {
+        if (savedInstanceState == null && this.resources.configuration.orientation != Configuration.ORIENTATION_LANDSCAPE) {
             supportFragmentManager
                 .beginTransaction()
                 .add(R.id.fragment_container_view, CitiesList())
@@ -56,7 +58,8 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.setFragmentResultListener("chosen_city", this) { key, bundle ->
             val result = bundle.getSerializable("city") as City
             cityVM.selectCity(result)
-            supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view, ChosenCity()).commit()
+            if (this.resources.configuration.orientation != Configuration.ORIENTATION_LANDSCAPE)
+                supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view, ChosenCity()).setReorderingAllowed(true).addToBackStack(null).commit()
         }
     }
 }

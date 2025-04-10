@@ -77,7 +77,7 @@ class ChosenCity : Fragment() {
         }
 
         requireActivity().onBackPressedDispatcher.addCallback(this) {
-            parentFragmentManager.beginTransaction().replace(R.id.fragment_container_view, CitiesList()).commit()
+            parentFragmentManager.popBackStackImmediate()
         }
     }
 }

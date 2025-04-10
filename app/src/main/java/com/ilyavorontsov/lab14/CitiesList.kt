@@ -4,6 +4,8 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Parcelable
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -83,11 +85,7 @@ class CitiesList : Fragment() {
 
     lateinit var list: RecyclerView
 
-    lateinit var state: android.os.Parcelable
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private var state: Parcelable? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -110,11 +108,17 @@ class CitiesList : Fragment() {
 
         list = view.findViewById(R.id.rvCityList)
         list.adapter = adapter
+
+        Log.v("RESTORE", state.toString())
+        if (state != null) {
+            Log.v("RESTORE", state.toString())
+            list.layoutManager?.onRestoreInstanceState(state)
+        }
     }
 
     override fun onPause() {
         super.onPause()
-
-        state = (list.layoutManager as LinearLayoutManager).onSaveInstanceState()!!
+        state = list.layoutManager?.onSaveInstanceState()!!
+        Log.v("PAUSE CITIES LIST", state.toString())
     }
 }
